@@ -1,0 +1,23 @@
+name: manifoldco/protoc-node
+description: "Use proto files to generate a GRPC client for NodeJS + TypeScript and publish it to NPM"
+inputs:
+  package-name:
+    description: "The name for your NPM package"
+    required: true
+  package-version:
+    description: "The version number of your NPM package"
+    required: true
+  npm-token:
+    description: "Your NPM authentication token with publish permissions"
+    required: true
+  proto-path:
+    description: "The path to your proto files"
+    required: true
+runs:
+  using: "docker"
+  image: "manifoldco/protoc-node"
+  env:
+    PROTO_PATH: ${{ inputs.proto-path }}
+    PACKAGE_NAME: ${{ inputs.package-name }}
+    PACKAGE_VERSION: ${{ inputs.package-version }}
+    NPM_TOKEN: ${{ inputs.npm-token }}
