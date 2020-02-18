@@ -1,4 +1,4 @@
-name: manifoldco/protoc-node
+name: manifoldco-protoc-ts
 description: "Use proto files to generate a GRPC client for NodeJS + TypeScript and publish it to NPM"
 inputs:
   package-name:
